@@ -63,7 +63,7 @@ else
   fi
   while [ -f "$key" ]; do
     login=$(dialog --keep-tite --nocancel --title "Upload SSH key to GitHub" --output-fd 1 --inputbox "Enter your GitHub Username" 7 60 "$USER")
-    password=$(dialog --keep-tite --nocancel --title "Upload SSH key to GitHub" --output-fd 1 --passwordbox "Enter your GitHub Password" 7 60 "")
+    password=$(dialog --keep-tite --nocancel --title "Upload SSH key to GitHub" --output-fd 1 --insecure --passwordbox "Enter your GitHub Password" 7 60 "")
     response=$(curl -sL -w "%{http_code}" -o /dev/null -u "$login:$password" --data "{\"key\":\"$(cat "$key")\"}" https://api.github.com/user/keys)
     case "$response" in
       "201") dialog --keep-tite --msgbox "Added SSH key $key to GitHub user $login" 8 40; SSH=true; break;;
