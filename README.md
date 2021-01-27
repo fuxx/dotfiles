@@ -1,4 +1,4 @@
-# phisch's dotfiles
+# Fuxx's dotfiles based on phisch's dotfiles
 This repository contains the configuration files (dotfiles) of my setup. 
 
 ## `~` is a git repository
@@ -10,7 +10,7 @@ To add a new file to the repository, it has to be force added with `git add --fo
 To effortlessly get started on a fresh arch linux installation, an interactive installation script can be run:
 
 ```sh
-bash <(curl -sL https://github.com/phisch/dotfiles/raw/master/.install)
+bash <(curl -sL https://github.com/fuxx/dotfiles/raw/master/.install)
 ```
 
 ### What does it do?
